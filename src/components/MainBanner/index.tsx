@@ -25,7 +25,7 @@ const MainBanner: React.FC<MainBannerProps> = ({ author }) => {
           <strong>
             <ReactRotatingText items={stack} />
           </strong>
-          <span>를 좋아하는</span>
+          <span>을/를 좋아하는</span>
           <br />
           개발자{' '}
           <strong>
@@ -34,38 +34,11 @@ const MainBanner: React.FC<MainBannerProps> = ({ author }) => {
           입니다.
         </S.Title>
         <Image alt='thumbnail' src='thumbnail.png' />
-        <S.SocialWrapper>
-          {Object.keys(social).map(
-            (link, index) =>
-              social[link as keyof typeof social] && (
-                <S.SocialButton key={index} target='_blank' href={social[link as keyof typeof social]}>
-                  {link}
-                </S.SocialButton>
-              ),
-          )}
-          {/* space-between을 위한 빈 div */}
-          <div />
-          <S.DropdownButton onMouseLeave={() => setIsDropdownOpened(false)}>
-            <div onMouseEnter={() => setIsDropdownOpened(true)}>etc.</div>
-            {isDropdownOpened && (
-              <S.Dropdown>
-                {Object.keys(dropdown).map(
-                  (link, index) =>
-                    dropdown[link as keyof typeof dropdown] && (
-                      <S.SocialButton key={index} target='_blank' href={dropdown[link as keyof typeof dropdown]}>
-                        {link}
-                      </S.SocialButton>
-                    ),
-                )}
-              </S.Dropdown>
-            )}
-          </S.DropdownButton>
-        </S.SocialWrapper>
       </S.IntroWrapper>
 
-      <S.BuyMeACoffeeWrapper>
+      {/* <S.BuyMeACoffeeWrapper>
         <BuyMeACoffee />
-      </S.BuyMeACoffeeWrapper>
+      </S.BuyMeACoffeeWrapper> */}
     </S.Wrapper>
   );
 };

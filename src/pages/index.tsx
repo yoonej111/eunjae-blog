@@ -30,7 +30,7 @@ const Home: React.FC<HomeProps> = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Seo title='개발자 단민' />
+      <Seo title='모험가 EJ' />
       <MainBanner author={author} />
 
       <FeaturedPostColumn title='Recent Posts' posts={recentPosts} fill={false} />
@@ -75,16 +75,6 @@ export const pageQuery = graphql`
           bio {
             email
             residence
-            bachelorDegree
-          }
-          social {
-            github
-            linkedIn
-            resume
-          }
-          dropdown {
-            velog
-            tistory
           }
         }
         featured {
